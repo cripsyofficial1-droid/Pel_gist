@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEL GIST</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors and font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // All accents unified to Orange
+                        'pepple-orange': '#F97316', // Vibrant Orange (Tailwind orange-500)
+                        'pepple-dark': '#1F2937',   // Tailwind gray-800
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    // Custom gradient for the body
+                    backgroundImage: {
+                        'gradient-black-orange': 'linear-gradient(135deg, #000000 0%, #1F2937 50%, #F97316 100%)',
+                    }
+                },
+            }
+        }
+    </script>
+    <style>
+        /* Import Inter font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Apply the custom gradient background to the body */
+        body {
+            /* Using Tailwind class for the gradient background */
+            background-image: linear-gradient(135deg, #000000 0%, #1F2937 50%, #F97316 100%);
+            background-attachment: fixed; /* Ensures the gradient covers the whole viewport nicely */
+            color: #E5E7EB; /* Light gray text for contrast */
+        }
+        /* Ensure the main content containers are visible */
+        .prose h2 {
+            color: #F97316; /* Apply orange color to prose H2s */
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen antialiased">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" onclick="showView('landing-view'); return false;" class="text-3xl font-extrabold text-pepple-orange tracking-tighter">PEL GIST</a>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden sm:flex space-x-8">
+                    <a href="#" onclick="showView('landing-view'); return false;" class="text-white hover:text-pepple-orange transition duration-300 px-3 py-2 text-sm font-medium rounded-lg">Home</a>
+                    <a href="#" class="text-white hover:text-pepple-orange transition duration-300 px-3 py-2 text-sm font-medium rounded-lg">About</a>
+                    <a href="#" class="text-white hover:text-pepple-orange transition duration-300 px-3 py-2 text-sm font-medium rounded-lg">Contact Us</a>
+                </nav>
+                
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button class="sm:hidden p-2 rounded-lg text-gray-300 hover:text-pepple-orange hover:bg-gray-800 transition duration-300">
+                    <!-- Icon for Menu -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINERS -->
+
+    <!-- 1. Landing View (Default) -->
+    <div id="landing-view" class="">
+        <!-- Hero Section -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <div class="text-center">
+                
+                <!-- NEW: Dedicated Logo/Main Image Area (Replaces Slider) -->
+                <div class="max-w-sm mx-auto mb-16">
+                    <img 
+                        src="PNG3.jpg" 
+                        alt="PEL GIST Logo" 
+                        class="w-full h-auto object-contain rounded-xl shadow-2xl shadow-pepple-orange/50 transition transform hover:scale-[1.02]"
+                        onerror="this.onerror=null; this.src='https://placehold.co/300x100/F97316/111827?text=PEL+GIST+LOGO';">
+                    <p class="mt-4 text-sm text-gray-400"></p>
+                </div>
+                <!-- End Logo Area -->
+                
+                <!-- Pre-Headline Tag -->
+                <p class="text-sm font-medium uppercase tracking-widest text-pepple-orange mb-3">
+                    Insights & Innovation
+                </p>
+
+                <!-- Main Headline - BREAKING NEWS -->
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black leading-tight mb-6">
+                    <span class="block text-pepple-orange"></span>
+                </h1>
+
+                <!-- Subtext/Description -->
+                <p class="max-w-2xl mx-auto text-xl text-gray-300 mb-10">
+                    PEL GIST is where leading voices in technology, culture, and business share their deepest insights. Dive into articles that challenge conventional thinking and inspire action.
+                </p>
+
+                <!-- Call to Action - OUR SOCIAL HANDLE (Updated with JS function) -->
+                <div class="flex justify-center">
+                    <a href="#" onclick="showView('social-view'); return false;" class="bg-pepple-orange text-gray-900 px-8 py-3 text-lg font-bold rounded-xl shadow-2xl shadow-orange-700/50 hover:bg-orange-400 transition duration-300 transform hover:scale-105">
+                        OUR SOCIAL HANDLE
+                    </a>
+                </div>
+                
+            </div>
+            
+            <!-- Article Content Section -->
+            <div id="featured-article-section" class="max-w-4xl mx-auto pt-20 mt-12 border-t border-gray-800">
+                <!-- Note: The article body text is intentionally styled black, making it invisible on the dark background. 
+                     I'm leaving it as requested in your previous updates, but you may want to change the text color 
+                     class from 'text-gray-900' to 'text-gray-300' for readability. -->
+                <article class="prose max-w-none">
+                    <!-- Article Title -->
+                    <h1 class="text-4xl sm:text-5xl font-extrabold mb-8 text-pepple-orange">The Unquiet Sky: How Super-Charged Thunder Will Define the Next Decade of Disaster</h1>
+
+                    <!-- INTRO PARAGRAPH: Uses ORANGE border and BLACK TEXT -->
+                    <p class="text-xl italic text-gray-900 font-semibold mb-12 border-l-4 border-pepple-orange pl-4 bg-gray-200/50 p-4 rounded-lg">
+                        The phrase "natural disaster" often conjures images of floodwaters, shaking earth, or powerful winds. Yet, an increasingly insidious and technologically dangerous threat is brewing in the atmosphere: the super-charged thunderstorm. Fueled by a warming planet, these events are generating unprecedented levels of lightning and thunder, turning what was once a disruptive inconvenience into a defining challenge for global infrastructure. While the sheer scale of coastal flooding captures headlines, the silent, intense energy transfer of extreme lightning events presents a unique and immediate danger to our hyper-connected world, forcing governments and corporations alike to reckon with the coming decade of atmospheric hostility.
+                    </p>
+
+                    <!-- Subheadings are Already ORANGE -->
+                    <h2 class="text-3xl font-extrabold mt-12 mb-4">The Warming Mechanism: Fueling the Electrical Surge</h2>
+                    <!-- Body text is BLACK (Invisible, added a semi-transparent gray background to the text container for contrast) -->
+                    <div class="text-gray-300 font-semibold leading-relaxed mb-6 bg-gray-900/50 p-4 rounded-lg">
+                        The primary driver behind the intensification of electrical storms is basic thermodynamics. A warmer atmosphere holds more moisture (as dictated by the Clausius-Clapeyon relation) and generates greater convective available potential energy ($CAPE$). CAPE is essentially the 'fuel' for a storm—the instability that drives air rapidly upward. Increased surface temperatures inject more energy and moisture into the weather system, creating taller, faster-moving thunderheads. This dynamic process dramatically increases the frequency and magnitude of electrical discharges within and below the cloud line. Experts predict a significant rise in lightning strike frequency across temperate regions, particularly in the northern hemisphere, meaning threats once isolated to tropical zones are now migrating globally.
+                    </div>
+
+                    <h2 class="text-3xl font-extrabold mt-12 mb-4">The Digital Grid's Vulnerability</h2>
+                    <!-- Body text is BLACK (Invisible, added a semi-transparent gray background to the text container for contrast) -->
+                    <div class="text-gray-300 font-semibold leading-relaxed mb-6 bg-gray-900/50 p-4 rounded-lg">
+                        The most critical challenge posed by super-charged thunder is not just the physical damage it causes, but its capacity to paralyze the digital systems that underpin modern society. Lightning strikes are responsible for catastrophic failures in power distribution networks. A single strike can cause cascading failures across interconnected smart grids. Furthermore, the very systems designed to manage and predict climate risk—data centers, telecommunications hubs, and satellite communication links—are highly susceptible to surges. A direct hit can instantly wipe out terabytes of mission-critical data, while nearby strikes can induce powerful electromagnetic pulses ($EMP$) that degrade sensitive electronic equipment without even making physical contact. The global shift toward electrification—from electric vehicles to residential heating—only increases our collective exposure to these atmospheric energy weapons.
+                    </div>
+
+                    <h2 class="text-3xl font-extrabold mt-12 mb-4">Hardening the Sky: Resilience and Remediation</h2>
+                    <!-- Body text is BLACK (Invisible, added a semi-transparent gray background to the text container for contrast) -->
+                    <div class="text-gray-300 font-semibold leading-relaxed mb-6 bg-gray-900/50 p-4 rounded-lg">
+                        Addressing this escalating threat requires a proactive, multi-pronged approach that moves beyond traditional weather defenses. **First**, we must invest massively in predictive modeling. Current storm warnings, while valuable, often lack the granularity needed to forecast localized, high-intensity lightning clusters hours in advance. **Second**, critical infrastructure must be "hardened." This involves upgrading lightning protection systems across the board, from taller, more efficient air terminals (lightning rods) to integrating enhanced surge protection devices ($SPDs$) at every node of the power grid and data network. **Finally**, a policy shift toward decentralized energy generation and localized microgrids would mitigate the risk of widespread, catastrophic outages caused by a single point of failure. The goal is to make our systems resilient, ensuring that when the unquiet sky inevitably unleashes its fury, our essential services can maintain operational stability.
+                    </div>
+
+                    <h2 class="text-3xl font-extrabold mt-12 mb-4">A Call to Action for the Next Decade</h2>
+                    <!-- Body text is BLACK (Invisible, added a semi-transparent gray background to the text container for contrast) -->
+                    <div class="text-gray-300 font-semibold leading-relaxed mb-6 bg-gray-900/50 p-4 rounded-lg">
+                        The age of predictable, manageable natural disasters is receding. The escalating intensity of thunderstorms, driven by climate change, demands immediate attention and capital investment. Super-charged thunder isn't just an ecological warning; it's a structural threat to the digital economy. The time for reactive disaster management is over. For nations and businesses to thrive in the next decade, they must proactively adapt to the sound of the climate's accelerating rage, fortifying the essential systems that keep our modern world running.
+                    </div>
+                    <!-- Article Content ends here -->
+                </article>
+
+                <!-- NEW: Read More Button -->
+                <div class="flex justify-center mt-12 mb-8">
+                    <a href="#" class="bg-pepple-orange text-gray-900 px-8 py-3 text-lg font-bold rounded-xl shadow-2xl shadow-orange-700/50 hover:bg-orange-400 transition duration-300 transform hover:scale-105">
+                        Read more article
+                    </a>
+                </div>
+                <!-- END NEW: Read More Button -->
+
+            </div>
+            
+        </main>
+        
+        <!-- Simple Footer -->
+        <footer class="py-6 border-t border-gray-900 mt-12">
+            <p class="text-center text-sm text-gray-500">&copy; 2025 PEL GIST. All rights reserved. | Built for the modern reader.</p>
+        </footer>
+    </div>
+    
+    <!-- 2. Social Handles View (Hidden by default) -->
+    <div id="social-view" class="hidden min-h-[calc(100vh-64px)] py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Updated Heading based on user request -->
+            <h1 class="text-4xl sm:text-5xl font-black mb-16 text-pepple-orange">Follow Us on All Social Media Platforms on PEL GIST</h1>
+            
+            <!-- Social Icons Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
+                
+                <!-- Icon 1: Twitter (X) -->
+                <a href="#" target="_blank" class="flex flex-col items-center p-6 bg-gray-900/50 rounded-2xl shadow-xl border-2 border-transparent hover:border-pepple-orange transition duration-300 transform hover:scale-105">
+                    <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.901 1.144C20.373.161 21.996 0 24 0v1.725h-2.172c-2.457 0-4.086 1.106-4.908 3.528L10.33 13.57 3.65 1.725H0l8.7 13.57L0 22.275h3.65l6.096-9.15l6.582 9.15h4.258L15.343 14.86l4.606-4.606C21.492 7.042 21.492 4.414 18.901 1.144z"/>
+                    </svg>
+                    <span class="mt-4 text-lg font-bold text-pepple-orange">@PELGist_X</span>
+                </a>
+
+                <!-- Icon 2: Instagram -->
+                <a href="#" target="_blank" class="flex flex-col items-center p-6 bg-gray-900/50 rounded-2xl shadow-xl border-2 border-transparent hover:border-pepple-orange transition duration-300 transform hover:scale-105">
+                    <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.744.054.897.043 1.595.177 2.193.418.678.272 1.258.694 1.761 1.252.505.558.927 1.18 1.2 1.879.243.598.377 1.296.42 2.193.041.96.054 1.314.054 3.744s-.013 2.784-.054 3.744c-.043.897-.177 1.595-.418 2.193-.272.678-.694 1.258-1.252 1.761-.558.505-1.18.927-1.879 1.2-.598.243-1.296.377-2.193.42-.96.041-1.314.054-3.744.054s-2.784-.013-3.744-.054c-.897-.043-1.595-.177-2.193-.418-.678-.272-1.258-.694-1.761-1.252-.505-.558-.927-1.18-1.2-1.879-.243-.598-.377-1.296-.42-2.193-.041-.96-.054-1.314-.054-3.744s.013-2.784.054-3.744c.043-.897.177-1.595.418-2.193.272-.678.694-1.258 1.252-1.761.558-.505 1.18-.927 1.879-1.2.598-.243 1.296-.377 2.193-.42.96-.041 1.314-.054 3.744-.054Zm0 1.637c-2.32 0-2.583.009-3.498.051-.837.039-1.424.167-1.884.354a3.172 3.172 0 0 0-1.282.909 3.172 3.172 0 0 0-.909 1.282c-.187.46-.315 1.047-.354 1.884-.042.915-.051 1.178-.051 3.498s.009 2.583.051 3.498c.039.837.167 1.424.354 1.884.225.56.544 1.05.909 1.44a3.342 3.342 0 0 0 1.44.909c.46.187 1.047.315 1.884.354.915.042 1.178.051 3.498.051s2.583-.009 3.498-.051c.837-.039 1.424-.167 1.884-.354.389-.156.76-.358 1.1-.606a3.172 3.172 0 0 0 .909-1.282c.187-.46.315-1.047.354-1.884.042-.915.051-1.178.051-3.498s-.009-2.583-.051-3.498c-.039-.837-.167-1.424-.354-1.884a3.172 3.172 0 0 0-1.282-.909c-.46-.187-1.047-.315-1.884-.354-.915-.042-1.178-.051-3.498-.051Zm0 4.394a5.394 5.394 0 1 0 0 10.788 5.394 5.394 0 0 0 0-10.788Zm0 1.637a3.757 3.757 0 1 1 0 7.514 3.757 3.757 0 0 1 0-7.514ZM18.57 5.795a1.18 1.18 0 1 0 0 2.36 1.18 1.18 0 0 0 0-2.36Z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="mt-4 text-lg font-bold text-pepple-orange">@pel_gist</span>
+                </a>
+
+                <!-- Icon 3: LinkedIn -->
+                <a href="#" target="_blank" class="flex flex-col items-center p-6 bg-gray-900/50 rounded-2xl shadow-xl border-2 border-transparent hover:border-pepple-orange transition duration-300 transform hover:scale-105">
+                    <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12c-.933 0-1.7-.767-1.7-1.7s.767-1.7 1.7-1.7 1.7.767 1.7 1.7-.767 1.7-1.7 1.7zm13.5 12h-3v-5.602c0-3.325-4-3.138-4 0v5.602h-3v-11h3v1.765c1.396-2.586 7-2.355 7 3.435v5.8z"/>
+                    </svg>
+                    <span class="mt-4 text-lg font-bold text-pepple-orange">PEL GIST LTD</span>
+                </a>
+
+                <!-- Icon 4: Facebook -->
+                <a href="#" target="_blank" class="flex flex-col items-center p-6 bg-gray-900/50 rounded-2xl shadow-xl border-2 border-transparent hover:border-pepple-orange transition duration-300 transform hover:scale-105">
+                    <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .732.593 1.324 1.325 1.324h11.496v-9.294h-3.128v-3.626h3.128v-2.19c0-3.102 1.893-4.787 4.659-4.787 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.76v2.313h3.626l-.475 3.626h-3.151v9.294h6.111c.732 0 1.325-.593 1.325-1.324v-21.351c0-.732-.593-1.325-1.325-1.325z"/>
+                    </svg>
+                    <span class="mt-4 text-lg font-bold text-pepple-orange">/PELGist</span>
+                </a>
+                
+            </div>
+            
+            <!-- Back Button -->
+            <div class="mt-20">
+                <a href="#" onclick="showView('landing-view'); return false;" class="bg-gray-800 text-pepple-orange border border-pepple-orange px-8 py-3 text-lg font-bold rounded-xl hover:bg-pepple-orange hover:text-gray-900 transition duration-300 transform hover:scale-105">
+                    ← Back to Home Page
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- JavaScript for View Switching Logic -->
+    <script>
+        // Function to switch between views
+        function showView(viewId) {
+            document.getElementById('landing-view').classList.add('hidden');
+            document.getElementById('social-view').classList.add('hidden');
+
+            document.getElementById(viewId).classList.remove('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial view to landing-view
+            showView('landing-view');
+        });
+    </script>
+
+</body>
+</html>
